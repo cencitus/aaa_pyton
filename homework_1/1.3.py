@@ -9,20 +9,29 @@ def main():
     ]
 
     # - на какую сумму оформили возвраты
-    returned_amount = sum(order['amount'] for order in orders if order['status'] == 'returned')
+    returned_amount = sum(
+        order['amount'] for order in orders if order['status'] == 'returned')
     print(f'сумма возвратов: {returned_amount}')
 
     # - кто хотя бы раз вернул зака
-    person_who_return = {order['buyer'] for order in orders if order['status'] == 'returned'}
+    person_who_return = {
+        order['buyer']
+        for order in orders
+        if order['status'] == 'returned'}
     print(f'хотя бы раз вернули заказ: {person_who_return}')
 
     # - сколько заказов доставлено покупателю
-    delivered_count = sum(1 for order in orders if order['status'] == 'delivered')
+    delivered_count = sum(
+        1 for order in orders if order['status'] == 'delivered')
     print(f'заказов доставлено: {delivered_count}')
 
     # - средний чек доставленных заказов
-    delivered_sum = sum(order['amount'] for order in orders if order['status'] == 'delivered')
-    print(f'средний чек доставленных заказов: {delivered_sum / delivered_count}')
+    delivered_sum = sum(
+        order['amount'] for order in orders if order['status'] == 'delivered')
+    print(
+        f'средний чек доставленных заказов: '
+        f'{delivered_sum / delivered_count}'
+    )
 
 
 if __name__ == '__main__':

@@ -23,7 +23,10 @@ def main():
 
     print('сколько раз ввели каждый запрос', query_counts)
     print('самый частый запрос - ', maximum_key)
-    print(f'доля самого популярного запроса {maximum / queries_amount * 100:.2f}%')
+    print(
+        f'доля самого популярного запроса '
+        f'{maximum / queries_amount * 100:.2f}%'
+    )
 
     one_time_query = []
     for query, value in query_counts.items():

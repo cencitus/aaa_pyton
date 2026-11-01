@@ -13,15 +13,25 @@ def main():
 
     # - день с самой большой выручкой
     max_revenue = max(day['revenue'] for day in days)
-    day_with_max = [day['day'] for day in days if day['revenue'] == max_revenue]
+    day_with_max = [
+        day['day']
+        for day in days
+        if day['revenue'] == max_revenue
+    ]
     print('день с максимальной выручкой:', ''.join(day_with_max))
 
     # - среднюю выручку на один заказ в каждый день
-    avg_rev_per_day = {day['day']: (day['revenue'] / day['orders']) for day in days}
+    avg_rev_per_day = {
+        day['day']: (day['revenue'] / day['orders'])
+        for day in days}
     print(avg_rev_per_day)
 
     # - дни, где возвратов больше 20% заказов
-    days_top_returns = [day['day'] for day in days if day['returns'] > day['orders'] * 0.2]
+    days_top_returns = [
+        day['day']
+        for day in days
+        if day['returns'] > day['orders'] * 0.2
+    ]
     print(days_top_returns)
 
 
