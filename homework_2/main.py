@@ -57,8 +57,11 @@ def calculate_statistics(salaries_by_department: dict) -> dict:
         min_salary = min(salaries)
         max_salary = max(salaries)
         avg_salary = sum(salaries) / employee_count
-        statistics[department] = {'count': employee_count, 'min_salary': min_salary,
-                                  'max_salary': max_salary, 'avg_salary': avg_salary}
+        statistics[department] = {
+            'count': employee_count,
+            'min_salary': min_salary,
+            'max_salary': max_salary,
+            'avg_salary': avg_salary}
 
     return statistics
 
